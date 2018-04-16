@@ -15,6 +15,7 @@ TABLE OF CONTENTS:
 
 /* 0. Reset ================================= */
 @import 'reset';
+@import 'variables';
 
 
 /* 1. Main Layout ================================= */
@@ -24,78 +25,281 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #ccc;
+	background: white;
+}
+.wrapper{
+	margin: 0 auto;
+	max-width: 95%;
 }
 
+header{
+	height: 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
+	.logo{
+		position: absolute;
+		background-image: url(../img/logo.jpg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 500%;
+		width: 180px;
+		top: 2em;
+	}
+	ul{
+		order: -1;
+		display: none;
+		flex-direction:row;
+		justify-content: space-between;
+
+		li{
+			width: 7.4em;
+			height: 2em;
+			margin-top: .5em;
+
+			&:last-child{
+				margin-left: 2em;
+			}
+		}
+
+	}
+}
+.hero-img{
+	background-image: url(../img/hero.png);
+	background-size: cover;
+	height: 500px;
+	width: 100%;
+}
 
 
 /* 2. Content ================================= */
 
-.content {
-	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
-	.foreground {
+.hero{
+	.info{
 		position: relative;
-		z-index: 2;
-	}
-	.background {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		background: white;
-		z-index: 1;
-		// perspective: 2000px;
-		transition: 0.2s;
-		transform: translateX(20px) perspective(600px) rotateY(15deg);
-	}
-	&:hover .background {
-		transform: translateX(-30px) perspective(600px) rotateY(-15deg);		
-	}
-	.logo {
-		position: absolute;
-		top: -30px;
-		width: 60px;
-		z-index: 2;
-		transition: 0.3s;
+		top: -12em;
+		border-radius: 20px;
+		font-family: $primary-font;
+		background-color: $chair-pink-color;
 
-		&:hover {
-			transform: rotate(-0.4turn)
+		h1{
+		@include inner-wrap;
+		@include big-font;
+		display: flex;	
+		padding: 1em;
+		padding-bottom: 0;
+		}
+
+		p{
+			@include inner-wrap;
+			display: flex;
+			font-weight: 100;
+			font-size: 2.2em;
+			padding: 2em;		
 		}
 	}
-	h1 {
-		font-weight: 700;
-		font-size: 22pt;
-		margin: 15px 0;
+	.color-blurb{
+		position: relative;
+		top: -9em;
+		font-family: $secondary-font;
+		font-weight: 200;
+		font-size: 1.2em;
+		line-height: 1.2;
+		background-color: $chair-green-color;
+		border-radius: 20px;
+		padding: 1em;
 	}
-	p {
-		color: #777;
-		// margin: 10px 0;
-		line-height: 140%;
-	}
-	p.github {
-		font-size: 0.8em;
-		
-		a {
-			opacity: 0.2;
-			transition: 0.3s;
-			&:hover {
-				opacity: 1;
-				color: red;
+	
+}
+.plan-options{
+	position: relative;
+	top: -9em;
+
+	.box{
+		margin-bottom: 4%;
+		border-radius:25px;
+		border: 1px solid black;
+		padding: 1em;
+
+		h2{
+			@include h2-font-styles;
+		}
+		h3{
+			@include h3-font-styles;
+			margin: .2em 0;
+		}
+		span{
+			font-size: 70%;
+			color: $grey-color;
+		}
+		p{
+			@include p-font-styles;
+			line-height: 1.5;
+			margin: 1em 0;
+		}
+		.button01{
+			@include button;
+			@include p-font-styles;
+			border: 1px solid $blue-color;
+			&:hover{
+				transition: all .2s ease-in;
+				background-color: $blue-color;
+			}
+		}
+		.button02{
+			@include button;
+			@include p-font-styles;
+			background-color: $pink-color;
+			&:hover{
+				transition: all .2s ease-in;
+				background-color: $chair-pink-color;
+			}
+		}
+		.button03{
+			@include button;
+			@include p-font-styles;
+			border: 1px solid $green-color;
+			&:hover{
+				transition: all .2s ease-in;
+				background-color: $green-color;
+			}
+		}
+		a{
+			text-decoration: none;
+			color: $chair-pink-color;
+			font-family: $primary-font;
+			letter-spacing:.04em;
+			font-weight: 100;
+			font-size: 110%;
+			width:100%;
+			cursor: pointer;
+		}
+		ul{
+			font-family: $secondary-font;
+			font-weight: 100;
+			font-size: 90%;
+			margin-top: 2em;
+		}
+		.ft-span{
+			font-family: $primary-font;
+			font-weight: 100;
+			font-size: 90%;
+			letter-spacing: .04em;
+			color: #6b6b6b;
+			display: flex;
+			flex-direction:column;
+			margin-top: 2em;
+			background-color: #d9d9d9;
+			border: 1px solid #b8b8b8;
+			border-radius: 10px;
+			padding: 1em;
+			text-transform: uppercase;
+
+			ul{
+				font-family: $primary-font;
+				font-size: 90%;
+				letter-spacing: .04em;
+				color: $grey-color;
+				margin: 1em 0;
+				list-style-type: square;
+				padding: 0 1em;
+			}
+			a{
+				font-family: $primary-font;
+				color: $chair-pink-color;
 			}
 		}
 	}
-	code {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		font-size: 0.8em;
-		opacity: 0.2;
+}
+
+.gang-plan{
+	border: 1px solid black;
+	position:relative;
+	top: -9em;
+	border-radius: 25px;
+	padding: 1em;
+
+	h2{
+		@include h2-font-styles;
 	}
+	p{
+		@include p-font-styles;
+		line-height: 1.5;
+		margin: 1em 0;
+	}
+	a{
+		@include button;
+		@include p-font-styles;
+		text-decoration: none;
+		color: $chair-pink-color;
+		cursor: pointer;
+		border: 1px solid #b8b8b8;
+			&:hover{
+				transition: all .1s ease-in;
+				border: 1px solid $chair-pink-color;
+				padding: 1em;
+			}
+	}
+
+	h3{
+		@include h3-font-styles
+		margin: .3em 0;
+		padding: 1em 0;
+	}
+	ul{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		li{
+			display:flex;
+			justify-content: center;
+			width: 40%;
+			padding: 1em 2em;
+		}
+	}
+}
+@media screen and (min-width: $tablet-breakpoint){
+	.wrapper{
+		max-width: 80%;
+	}
+	.plan-options{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.box{
+		width: 47%;
+		margin: 0;
+	}
+	#special{
+		border: 5px solid $chair-pink-color;
+	}
+	.button01, .button02, .button03{
+		line-height: 1.7;
+	}
+	.gang-plan{
+		display:flex;
+		.gang-info{
+			width: 45%;
+			margin: 0 1em;
+		}
+		.customers{
+			margin: 0 .3em;
+			h3{
+				padding-left: .5em;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $desktop-breakpoint){
+	.wrapper{
+		max-width:95%;
+	}
+	.box{
+		width: 32%;
+	}
+
 }

@@ -1,0 +1,68 @@
+$tablet-breakpoint: 640px;
+$desktop-breakpoint: 960px;
+
+$secondary-font: 'Raleway', sans-serif;
+$primary-font: 'Do Hyeon', sans-serif;;
+
+
+$chair-green-color: #70b66d;
+$chair-pink-color: #f47aa2;
+
+$blue-color: #abeaf8;
+$pink-color: #f6b4d0;
+$green-color: #b2f8a1;
+$grey-color: #6b6b6b;
+
+@mixin bp-small{
+	@media only screen and (min-width: $tablet-breakpoint){
+		@content;
+	}
+}
+@mixin bp-large{
+	@media only screen and (min-width:$desktop-breakpoint){
+		@content;
+	}
+}
+@mixin inner-wrap{
+	margin: 0 auto;
+	max-width: 85%;
+}
+@mixin big-font{
+	font-size: 4.35em;
+	letter-spacing: .1em;
+	font-weight: 200;
+}
+@mixin h2-font-styles{
+	font-family: $primary-font;
+	font-weight:200;
+	font-size: 370%;
+	letter-spacing: .1em;
+	margin: .3em 0;
+	word-break: break-all;
+	@include bp-small{
+		font-size: 340%;
+	}
+}
+@mixin h3-font-styles{
+	font-family: $primary-font;
+	font-weight: 100;
+	font-size: 170%;
+	letter-spacing: .1em;
+}
+@mixin p-font-styles{
+	font-family: $secondary-font;
+	font-weight: 100;
+	font-size: 110%;
+}
+@mixin button{
+	display:flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+	cursor: pointer;
+	margin-bottom: 1em;
+
+	@include bp-small{
+		width:100%;
+	} 
+}

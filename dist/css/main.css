@@ -73,83 +73,387 @@ table {
 }
 
 body {
-	background: #ccc;
+	background: white;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
+header {
+	height: 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header .logo {
+	position: absolute;
+	background-image: url(../img/logo.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 500%;
+	width: 180px;
+	top: 2em;
+}
+
+header ul {
+	order: -1;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+header ul li {
+	width: 7.4em;
+	height: 2em;
+	margin-top: .5em;
+}
+
+header ul li:last-child {
+	margin-left: 2em;
+}
+
+.hero-img {
+	background-image: url(../img/hero.png);
+	background-size: cover;
+	height: 500px;
+	width: 100%;
 }
 
 /* 2. Content ================================= */
-.content {
+.hero .info {
 	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
+	top: -12em;
+	border-radius: 20px;
+	font-family: "Do Hyeon", sans-serif;
+	background-color: #f47aa2;
 }
 
-.content .foreground {
-	position: relative;
-	z-index: 2;
+.hero .info h1 {
+	margin: 0 auto;
+	max-width: 85%;
+	font-size: 4.35em;
+	letter-spacing: .1em;
+	font-weight: 200;
+	display: flex;
+	padding: 1em;
+	padding-bottom: 0;
 }
 
-.content .background {
-	position: absolute;
+.hero .info p {
+	margin: 0 auto;
+	max-width: 85%;
+	display: flex;
+	font-weight: 100;
+	font-size: 2.2em;
+	padding: 2em;
+}
+
+.hero .color-blurb {
+	position: relative;
+	top: -9em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 200;
+	font-size: 1.2em;
+	line-height: 1.2;
+	background-color: #70b66d;
+	border-radius: 20px;
+	padding: 1em;
+}
+
+.plan-options {
+	position: relative;
+	top: -9em;
+}
+
+.plan-options .box {
+	margin-bottom: 4%;
+	border-radius: 25px;
+	border: 1px solid black;
+	padding: 1em;
+}
+
+.plan-options .box h2 {
+	font-family: "Do Hyeon", sans-serif;
+	font-weight: 200;
+	font-size: 370%;
+	letter-spacing: .1em;
+	margin: .3em 0;
+	word-break: break-all;
+}
+
+@media only screen and (min-width: 640px) {
+	.plan-options .box h2 {
+		font-size: 340%;
+	}
+}
+
+.plan-options .box h3 {
+	font-family: "Do Hyeon", sans-serif;
+	font-weight: 100;
+	font-size: 170%;
+	letter-spacing: .1em;
+	margin: .2em 0;
+}
+
+.plan-options .box span {
+	font-size: 70%;
+	color: #6b6b6b;
+}
+
+.plan-options .box p {
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	line-height: 1.5;
+	margin: 1em 0;
+}
+
+.plan-options .box .button01 {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+	cursor: pointer;
+	margin-bottom: 1em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	border: 1px solid #abeaf8;
+}
+
+@media only screen and (min-width: 640px) {
+	.plan-options .box .button01 {
+		width: 100%;
+	}
+}
+
+.plan-options .box .button01:hover {
+	transition: all .2s ease-in;
+	background-color: #abeaf8;
+}
+
+.plan-options .box .button02 {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+	cursor: pointer;
+	margin-bottom: 1em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	background-color: #f6b4d0;
+}
+
+@media only screen and (min-width: 640px) {
+	.plan-options .box .button02 {
+		width: 100%;
+	}
+}
+
+.plan-options .box .button02:hover {
+	transition: all .2s ease-in;
+	background-color: #f47aa2;
+}
+
+.plan-options .box .button03 {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+	cursor: pointer;
+	margin-bottom: 1em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	border: 1px solid #b2f8a1;
+}
+
+@media only screen and (min-width: 640px) {
+	.plan-options .box .button03 {
+		width: 100%;
+	}
+}
+
+.plan-options .box .button03:hover {
+	transition: all .2s ease-in;
+	background-color: #b2f8a1;
+}
+
+.plan-options .box a {
+	text-decoration: none;
+	color: #f47aa2;
+	font-family: "Do Hyeon", sans-serif;
+	letter-spacing: .04em;
+	font-weight: 100;
+	font-size: 110%;
 	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: white;
-	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
+	cursor: pointer;
 }
 
-.content:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
+.plan-options .box ul {
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 90%;
+	margin-top: 2em;
 }
 
-.content .logo {
-	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transition: 0.3s;
+.plan-options .box .ft-span {
+	font-family: "Do Hyeon", sans-serif;
+	font-weight: 100;
+	font-size: 90%;
+	letter-spacing: .04em;
+	color: #6b6b6b;
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+	background-color: #d9d9d9;
+	border: 1px solid #b8b8b8;
+	border-radius: 10px;
+	padding: 1em;
+	text-transform: uppercase;
 }
 
-.content .logo:hover {
-	transform: rotate(-0.4turn);
+.plan-options .box .ft-span ul {
+	font-family: "Do Hyeon", sans-serif;
+	font-size: 90%;
+	letter-spacing: .04em;
+	color: #6b6b6b;
+	margin: 1em 0;
+	list-style-type: square;
+	padding: 0 1em;
 }
 
-.content h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+.plan-options .box .ft-span a {
+	font-family: "Do Hyeon", sans-serif;
+	color: #f47aa2;
 }
 
-.content p {
-	color: #777;
-	line-height: 140%;
+.gang-plan {
+	border: 1px solid black;
+	position: relative;
+	top: -9em;
+	border-radius: 25px;
+	padding: 1em;
 }
 
-.content p.github {
-	font-size: 0.8em;
+.gang-plan h2 {
+	font-family: "Do Hyeon", sans-serif;
+	font-weight: 200;
+	font-size: 370%;
+	letter-spacing: .1em;
+	margin: .3em 0;
+	word-break: break-all;
 }
 
-.content p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
+@media only screen and (min-width: 640px) {
+	.gang-plan h2 {
+		font-size: 340%;
+	}
 }
 
-.content p.github a:hover {
-	opacity: 1;
-	color: red;
+.gang-plan p {
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	line-height: 1.5;
+	margin: 1em 0;
 }
 
-.content code {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+.gang-plan a {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+	cursor: pointer;
+	margin-bottom: 1em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 110%;
+	text-decoration: none;
+	color: #f47aa2;
+	cursor: pointer;
+	border: 1px solid #b8b8b8;
+}
+
+@media only screen and (min-width: 640px) {
+	.gang-plan a {
+		width: 100%;
+	}
+}
+
+.gang-plan a:hover {
+	transition: all .1s ease-in;
+	border: 1px solid #f47aa2;
+	padding: 1em;
+}
+
+.gang-plan h3 {
+	font-family: "Do Hyeon", sans-serif;
+	font-weight: 100;
+	font-size: 170%;
+	letter-spacing: .1em;
+	margin: .3em 0;
+	padding: 1em 0;
+}
+
+.gang-plan ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.gang-plan ul li {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	padding: 1em 2em;
+}
+
+@media screen and (min-width: 640px) {
+	.wrapper {
+		max-width: 80%;
+	}
+	.plan-options {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.box {
+		width: 47%;
+		margin: 0;
+	}
+	#special {
+		border: 5px solid #f47aa2;
+	}
+	.button01, .button02, .button03 {
+		line-height: 1.7;
+	}
+	.gang-plan {
+		display: flex;
+	}
+	.gang-plan .gang-info {
+		width: 45%;
+		margin: 0 1em;
+	}
+	.gang-plan .customers {
+		margin: 0 .3em;
+	}
+	.gang-plan .customers h3 {
+		padding-left: .5em;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.wrapper {
+		max-width: 95%;
+	}
+	.box {
+		width: 32%;
+	}
 }
 
 /*# sourceMappingURL=main.css.map */
