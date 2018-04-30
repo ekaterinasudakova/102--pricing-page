@@ -298,7 +298,16 @@ header{
 		padding: 0em 2em;
 	}
 }
-
+.back-btn{
+	@include h3-font-styles;
+	a{
+		text-decoration:none;
+		color: black;
+		&:hover{
+			border: 4px dotted $chair-pink-color;
+		}
+	}
+}
 @media screen and (min-width: $tablet-breakpoint){
 	.wrapper{
 		max-width: 80%;
